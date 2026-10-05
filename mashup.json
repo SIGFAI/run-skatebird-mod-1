@@ -1,0 +1,574 @@
+{
+  "id": "sigf/run-skatebird-mod-1",
+  "version": "1.0.0",
+  "name": "RUN, mod 1: SkateBIRD",
+  "tagline": "Make a Run and Catch game from current game with levels, enemy types, all chasing you. Abilities for player and for enemy types. Several Voice lines player and enemy depending on situation/distance, including humour/memes.",
+  "kind": "mod",
+  "games": [
+    {
+      "game": "skatebird",
+      "role": "host",
+      "engine": "SkateBIRD (itch build, Unity 2019.4.20f1 Mono, 64-bit, game exe SkateBIRD.exe) + BepInEx 5.4.23.2 x64 C# plugin (net472)"
+    }
+  ],
+  "requires": [
+    {
+      "id": "bepinex"
+    }
+  ],
+  "install": [
+    {
+      "game": "skatebird",
+      "strategy": "profile",
+      "files": [
+        {
+          "src": "run-skatebird-mod-1.zip",
+          "dst": "{game}",
+          "unpack": true,
+          "contents": [
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/flame.png",
+              "sha256": "ffe928fd1780bd0102119c8f77cdaf23791a48b788057d6d9013dc670ea94909"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/glow.png",
+              "sha256": "12068001afbf3901c338989888a42419004d7ce3bd20107a3b43d9cad544157f"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/heart.png",
+              "sha256": "c75e9102920091e99352f70d5211532bd1787341fc90660a6bab21c33c7db7fc"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/magic.png",
+              "sha256": "52695b31ca94c3a42381d0127291d148e8681cf63df2eb1966a83db48ab4b0e2"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/muzzle.png",
+              "sha256": "c5afba7b6c34c6152889d33f2c31432b3beb04c843b0f1cffbdff876adcca285"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/puff.png",
+              "sha256": "8c54704e2362dc42c288f64ed33ba035e27bfaefed09d052ef16c0fe3b37d671"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/ring.png",
+              "sha256": "22d01b47aeeaa852cd58ae92ca9d3b590eaf689453e7d8c381ee356789a626b3"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/scorch.png",
+              "sha256": "d82e5d86ccfe626c02e33270a070744a213ff4fee1337b94ff7edf03fe84f423"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/slash.png",
+              "sha256": "35c32d7dcd9c815e0811ef6bcd5cb98fdebcd7dd3181cc3ef85014a7916a13d2"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/smoke.png",
+              "sha256": "b12b1ed7fd78d63694ec398d0149f24048aba570ae2727d992c0bdcb628a0ad3"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/softring.png",
+              "sha256": "e5aab0f9707210852da2b360f8f9350afd00eba28b43d7be08ebfa13c81900f5"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/spark.png",
+              "sha256": "489bb6a9caab52cd395d3ce4567db2aa327e37a6875619a2de0a70b6008338e8"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/splat.png",
+              "sha256": "13392c67c3c3577a7bfe6e09f69efbc74eb6e2e8905c444b6bd496dbdb5a69d9"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/star.png",
+              "sha256": "51f39dc02d7f087400b1d43668359c353dbd788fe5e22620e919694c7f105e1a"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/trace.png",
+              "sha256": "132a83a566d4fe591a27ccd395fb850941902734697f040c6b2b3f33191b5649"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/fx/twirl.png",
+              "sha256": "f07c4c4839a46f5e946bc57ceb0d2d87948721b05de7d1607827a43363ec8a36"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/models/bread.png",
+              "sha256": "94c4b2dc47ec1a8e9cb9eee31811c7672abe097db147fde937f558545ea3c80c"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/models/cat.png",
+              "sha256": "1077689a093d93da6726eb59e6f88502f4bd86cec072deb590830e46fc35e958"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/models/dog.png",
+              "sha256": "0f1c9f40a790fab45c1c30db6c5fdf095e4b009792d5a470b1419c650944c430"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/models/hawk.png",
+              "sha256": "bbfe37860f6603f840b6bdfb0b3a90b67fdbe52b8d06fe442c2cd29e21d344e7"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/models/raccoon.png",
+              "sha256": "69cf5bfe7fb6be1c5a72c145c2f018ec40cbc68d89f9c54be22d0d85b911926f"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/models/vacuum.png",
+              "sha256": "44b92b095631a0f5a50a9551ae0f8c1fabec1c3986be62c1673e3c40958f2d1f"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/alarm.wav",
+              "sha256": "1e522bcc772b1600d3647bb39386cab67678cf5a5e4d56c6fc91c241fac7be7f"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/boss_roar.wav",
+              "sha256": "61b8a37676accc4f19a61a6aa80cab9d8eacb151d4e4cabd3f0011c4eaaa12ab"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/cat_hiss.wav",
+              "sha256": "ef928da1c9c51cc70fadab8b215af6a4904a802fcf1733eb03e1f23b8b53b2ca"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/cat_meow.wav",
+              "sha256": "8a543a573929d8badda835b79334e806f74b885a629edf434fbcbd113957ac2a"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/cat_yowl.wav",
+              "sha256": "404ab2a1f620062241e13977b657b9e2d2053205ca7b87c4b996d8eece8b5f2f"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/caught.wav",
+              "sha256": "3f1270a7652cef13e5a27e499f75b8b54f69571e067bade9127352c9005122af"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/dash.wav",
+              "sha256": "4217122df4a3c6bfa74c3b5e0f3620701cee5246e2b13e9fbbdc2dc900011ce8"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/dog_bark.wav",
+              "sha256": "b7d8021a3a760f3b5b0956f3cd03cf3f9ea2e85f90e03dec4deaf274eee05191"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/dog_growl.wav",
+              "sha256": "23f67f44f811b58ac749809c38583030681ca9aa2d4ff3f33c719cea8f32ebed"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/dog_whine.wav",
+              "sha256": "badba034851a54c6419a910e54e14722ec7280dd7fe0620dcbbb53c944de184b"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/egg_splat.wav",
+              "sha256": "b10b7d26f917116f16060ab6f91446bc1fc9ab758760c24ef8ac9756b0f3d6c3"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/egg_throw.wav",
+              "sha256": "c5ef541d6217a6d4ff5120dfb8069a42cae2340238e6a62751123b7f94e97664"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/explosion.wav",
+              "sha256": "7bbdfdc2b16140ff49d37e32e77985f003a691582ce65e7ed21bb95a79f59607"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/hawk_screech.wav",
+              "sha256": "50f69bfc5136d439a42000326155b4892dc73d48609a9a357f8575cae7716a64"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/hit_1.wav",
+              "sha256": "e5da815d6d82581a496d6a460dd4d47c0a7fe7ad987d52f4cc5c39f7aea9ca8b"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/hit_2.wav",
+              "sha256": "7355a04469a8f5bb7f3e5482eb8f519d30fd9ade0348adbe8f5e603c0e1f969e"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/hit_3.wav",
+              "sha256": "73fe961d40c3d429d9217069cb3f69219b79252258d529c57ab7d828fa8d1f73"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/knock.wav",
+              "sha256": "443a24085d7a4d9c49b5c3b4cf6e6b905b9a3e7585a98751988e26f118bc48a1"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/level_start.wav",
+              "sha256": "7d14e5ab3a4373c84d6cde1b64c31af02f9cd351487fef47edc78c91a10c08c3"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/level_up.wav",
+              "sha256": "d2324072e515beea93ea0868da4c31020e737c36022df1c94ab84481dc975c48"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/music_boss.wav",
+              "sha256": "f1e6a75f6aff539a442d51d4a5b816c7a7710dfd5697a84ea1787d6d7d4712a9"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/music_chase.wav",
+              "sha256": "d999b24641170653a7091b0a7fbde9de180fc98d4516ba013b84ba36e21678c0"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/pickup.wav",
+              "sha256": "92dee8f335067da818af79aea83a6f571b50f5c8218791aff92f315a5af25c27"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/poof.wav",
+              "sha256": "825e3e5fae8d7802b6b67190a02166f7e44550531f0c4939ca1e577fdda7af06"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/raccoon_chitter.wav",
+              "sha256": "5799fdee6fe236cef0bc841926eedd1fc2ba06fa5873ce3b8c0dd284dbcd5999"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/scream_wave.wav",
+              "sha256": "6d0e858e8a58c52d9eb72ff58870342e1bc7b4277d39511f6d293034074a750e"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/vacuum_hum.wav",
+              "sha256": "3a01751ab0c4c4f1645c5cf693fd1652df525f835d2884e708e10aca373ec58a"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/sfx/vacuum_suck.wav",
+              "sha256": "fc0b04be73bdb5a00fc734da95d9947ad070c4e63b0f9503276c8b209a372056"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/ann_clear.wav",
+              "sha256": "ab81bc4b20204b5e77310433c8f0560210ac1094e5df5bddc93781a08901f144"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/ann_go.wav",
+              "sha256": "2024720c078781b338528dfe1c5a53aecb3c1d5d24cae28233c94c691825ff97"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/ann_hurry.wav",
+              "sha256": "a72452deebcf398a0d3d567bd422551cb2f3d499b677c71ae80b7ec52306244d"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/ann_lookout.wav",
+              "sha256": "67aaa5c9e3beefedc2c1b09b3251d114977ae30921805dac9f5bbacd0c3e11d5"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/ann_lvl1.wav",
+              "sha256": "cdc95ad66c0e2cfc414841b27e6346ad5c589ce6460b88b6bc80fe240bb48d96"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/ann_lvl2.wav",
+              "sha256": "7f68e854c719d6fdb6a2372b98007e1b860e1b8efd24f994b492660ca98280a8"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/ann_lvl3.wav",
+              "sha256": "dfd7962a430000d9477bef036922ed68aca6eaf59d4d0e173edd544cd1e1e164"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/ann_lvl4.wav",
+              "sha256": "9dfe6a7461d2a474054b0c50cf42bbc12b1dcadf63baa0e2f50717c22c617dab"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/ann_lvl5.wav",
+              "sha256": "f9694e45f787de32007c62fb92bf016cee278d307b6c8f2f174e4b9f20a8d95e"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/ann_over.wav",
+              "sha256": "216650ffe4112ab3d2db5b44bc1090075afa148be7d3a4ff3dbb56ed59091dcb"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/ann_ready.wav",
+              "sha256": "e448c780be7f3bd5a0cb875da78289dda5491896a93578b3630c96108c86eed8"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/ann_win.wav",
+              "sha256": "fe6659f290da14f12a1cf59913d241822b35679e3eb5d92b49e41143e413979c"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_boss.wav",
+              "sha256": "64c46338b42ce4a0b620be868713efb409190ebabb8ae95034fd80acc20f1780"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_bread1.wav",
+              "sha256": "1a6456c643cb9dd5e2c5f1cd05f382038803bf4e36f14865eb9b0f0b1e2cade5"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_bread2.wav",
+              "sha256": "acc633a369ec0ea3f267f22a09776258391334fcf46213b05ca007afbd72e6ba"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_caught1.wav",
+              "sha256": "9664f112ef0b8482ef981e6859b92386f5850ce56dbf021beba23b605e32eac5"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_caught2.wav",
+              "sha256": "a00a85b01a1b090afa37ba228bd02e849d5a8f71f928a0661e77a83ec5ce44c8"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_close1.wav",
+              "sha256": "836bd9c2e8c45c965246b508c3b12eba2f90a7dc1233df3f438d0656829de9ab"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_close2.wav",
+              "sha256": "64f3d56f333b6ec4812f52595b37f52b4fc9fd7f56b9d80978e37a1afabbcba0"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_close3.wav",
+              "sha256": "735eb423f2cbf4348df6156bee0091eaed2065d679d0a277bb09044b921371dd"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_egg1.wav",
+              "sha256": "cad7dedba6f32db573c6e92d7243fe418ee6e94cd1ea2c5ced80994206b2b5ba"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_egg2.wav",
+              "sha256": "013184050b16d165ab184cd5b85d39002ff2ae220bc78a17b6a6352e89abc329"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_far1.wav",
+              "sha256": "6991488b17baf8f840ba458b4e4f978d3c4cf9aefd767e804d2105be3b1a9237"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_far2.wav",
+              "sha256": "a2e4374be290fbdeaa7221108430e7a37c5e65f87932d5643559b5b4adc8f0f3"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_kill1.wav",
+              "sha256": "26605c56f770651cfcad44bd25980e60a1cae8b581c89ba9f86aef30c12dde32"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_kill2.wav",
+              "sha256": "7a24688dc4ad31106ac0568345081c05f17cb6648b0050889643e5e820e59831"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_kill3.wav",
+              "sha256": "fa604b3005c311dd99b0f260e53c5c65a7032d99712ca0aaef0bd096d0d69a6f"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_screm1.wav",
+              "sha256": "5cad551e750c49df5613470e41cda7131ddd0949992daf74692ce7fb28629601"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_start1.wav",
+              "sha256": "2ef24759104c107497ee2862c908aed250438c385a4061c54cbc0a8814d5b054"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_start2.wav",
+              "sha256": "82637bf7ced1ec46aaa5d64cbdba61dfa300586151a2386e79c9114db88ea5d0"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_stomp.wav",
+              "sha256": "16d4e3c92f3e775e303846ecdf3ddb51e0d7d08be508c7727cec3488ca437544"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/birb_win.wav",
+              "sha256": "ca67ad67a0a21e873a2224c3c0430702f42095842737fcfa68f93970aa5fcae0"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/boss_catch1.wav",
+              "sha256": "8a408646ba88eb5e4651a208cf049935e489a1111c07a4827d9e0cd91d9eb4b0"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/boss_death1.wav",
+              "sha256": "d675ab2f58c699750176bdcd09744ea94ad6e0b5b345d67b662be62f61a2c62d"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/boss_enrage1.wav",
+              "sha256": "47af3b2cf4d899ac3842a2016b8a8cf264f75f1ab18ff0a53b629de63b78865e"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/boss_hurt1.wav",
+              "sha256": "8258205e567e8a0421ff01bc62a6c4631f6a8be73823311a57a2426439902f95"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/boss_intro1.wav",
+              "sha256": "607d1ac783e365bfda0f9009a4348f78d4158e28c9e0f4c5f3eb672d6a982cfd"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/boss_slam1.wav",
+              "sha256": "d0c971753e8a5fc23ac8fa0f87c031ee33d0c52c87d4107d44e130d46d5dc464"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/boss_summon1.wav",
+              "sha256": "a80d052149b2646ba0419e9dd504566161d63a350482b59fac22a71febe391e0"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/boss_taunt1.wav",
+              "sha256": "56ebe692a552b661f2378fe103b7465b97d92bce9ff6c61edecc2e3cdc04d980"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/boss_throw1.wav",
+              "sha256": "1bf3d92e2c1a2d0f8a09d0a278034d83ab055ff10983bed28d5a4b5b43359aa2"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/cat_catch1.wav",
+              "sha256": "cc67e754241ec662b1d4630ddd158bb9e1da323e32ea57d70bb553000d491334"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/cat_close1.wav",
+              "sha256": "2e7e5e6488d92225bdf3332f313908bba49cd9c8045fcdceeebfa409756983f9"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/cat_close2.wav",
+              "sha256": "981dd1fce1e1cf703265e6fe3d6ebac633e7afd8bcbfa7b1c9c16b4187582e0a"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/cat_death1.wav",
+              "sha256": "aa97fb8f81bf1c0d0e94e65acecf1c861d68275e5089e41e73d8bf113814b4d1"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/cat_hurt1.wav",
+              "sha256": "a16195b473ad62d7b05958e1b6537d6b0a6628c58299af03bb13b89853589701"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/cat_hurt2.wav",
+              "sha256": "c25a9ccf62c9e80548a6c022775815a44ba7c58f2dd24f4f9a989e9a9184c9ba"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/cat_lost1.wav",
+              "sha256": "31098797f11993eaa6c941e9da7ff1a7b0edf6aa3779907eb1054e058d9b1f72"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/cat_pounce1.wav",
+              "sha256": "d86944dea04b163e293dd6dda9b8cebf2f40ab091863b1cabe30ba3ae318ea19"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/cat_spot1.wav",
+              "sha256": "06e7590ebdf574c78bebb6a8e438cea05769d727ab3db87871eb0ae78c849ff3"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/cat_spot2.wav",
+              "sha256": "cb895740b76063019d61fe3c2bc1926a62bfb3e910fca0ab7ff7fa66326797f8"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/cat_taunt1.wav",
+              "sha256": "33ca9737d4886d9321495fdcc661fd0b7c5e72245a4de25d3c0cae371dc28566"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/dog_bark1.wav",
+              "sha256": "350197fe1cc446b9543f6ecf7b245310eb3f34a85f63974aa50dc4af4b395798"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/dog_catch1.wav",
+              "sha256": "5e13b2e2597cc4fabe2724215ed0167dafcd25330e264b9fefbfa95b64459fbf"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/dog_close1.wav",
+              "sha256": "d96f0be2f9b017bd8de4017140113ee74aab0124f8053ed86fb17d2a2821b88f"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/dog_death1.wav",
+              "sha256": "a548dc63497bebbfe400132eb7871eff55299d9fe3fac499a3067ffa6813063d"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/dog_hurt1.wav",
+              "sha256": "e4384d22ceda6f5451566402f928b3bf297f7ddd73f7de0889d5730dc9b6b3de"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/dog_lost1.wav",
+              "sha256": "628091c34cdbac07fa9996e7ce14c140ccbd04376759aab558ab4b8a35143c43"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/dog_spot1.wav",
+              "sha256": "6eea1459b02ec695066b7adfdea6b58844dab815d07b2d098647d32b522f6a68"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/dog_spot2.wav",
+              "sha256": "6d9b749f6dabf785f55f85c08a5579ae712a84c40774aa95651c999bdd320c3a"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/dog_zoom1.wav",
+              "sha256": "3f65f1737def6c466d3d1d66c273409860f17880562999a7cc9f0bcc76870828"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/hawk_catch1.wav",
+              "sha256": "3085f6dc1889cf5a6cbb6da91855c4e042bf4774c7af5ed4efcd3178bd85fdac"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/hawk_close1.wav",
+              "sha256": "e5482e02bf0faca9bdacfdad271b45b3aac8a623e3971c5bddac18bede148812"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/hawk_death1.wav",
+              "sha256": "407812566e1eff1ac075c3fc99885981db5a81c778970bf25c87db8f5e8e5561"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/hawk_dive1.wav",
+              "sha256": "ac2152cd2a5031b9de9382a97e208edf597949aa92e3ff9af17ff03edfedb0d5"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/hawk_hurt1.wav",
+              "sha256": "3b167fac9b9a39557da12893745b2c025b826c14d030d8effb6803d77c6134a4"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/hawk_spot1.wav",
+              "sha256": "cbe593ddd34fe9c0bf6518bf886479ab7ca34f1746fd31c423404e90580d395f"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/vac_catch1.wav",
+              "sha256": "5efbfdc6eeb44491364e115fb1c2d2a0658198b468522af1a2db62d11b1dc7df"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/vac_close1.wav",
+              "sha256": "cefaa2e51d5650bb91e1615cc41baabb85e5f1fb589be12843ae8441d7fcaf88"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/vac_death1.wav",
+              "sha256": "2c7dadde6ae15b30a21bec236c0375a3221917701efd528f76e33ef79225d450"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/vac_hurt1.wav",
+              "sha256": "46e1d6e3eec64f20ee6b22465dd9bead7524111e4380dd1ee9c569e3e6ce9129"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/vac_lost1.wav",
+              "sha256": "e84f1f5bea1e5042ac4110a180d57b4c99b84a495e73b7b31e4283055631f4f2"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/vac_spot1.wav",
+              "sha256": "4c564f5e8c17a1d6779859adc925262ad5e3ac509a19a170db5fc2e6975d98d1"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/vac_spot2.wav",
+              "sha256": "7e40e38e69fd0313dbbe20886444b3a181c9ba0bc4401a9c90824d99c2569bc3"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/assets/vo/vac_suck1.wav",
+              "sha256": "0bb799d135eb44f30db2334d032b676049fb2a47d593e9334da6e56b8bb38812"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/SigfMix.dll",
+              "sha256": "901f4861dc23ec4457b669037ee1dcb593f70e09decbf5d67e57c4da97ed54ec"
+            },
+            {
+              "path": "BepInEx/plugins/SigfMix/SigfMix.pdb",
+              "sha256": "13e298696a857cd4278cdffa1008012e241283d2ba24af3e8a5f33bc013d0457"
+            }
+          ],
+          "url": "https://github.com/SIGFAI/run-skatebird-mod-1/releases/download/v1.0.0/run-skatebird-mod-1.zip",
+          "sha256": "3dbebb172135874a2bfdc428ff9a21aeb9cd1717848a52ffa0bc840181a87c5b",
+          "size": 36355693
+        }
+      ],
+      "loader": "bepinex"
+    }
+  ],
+  "launch": [
+    {
+      "game": "skatebird",
+      "args": []
+    }
+  ],
+  "files": [
+    {
+      "name": "run-skatebird-mod-1.zip",
+      "url": "https://github.com/SIGFAI/run-skatebird-mod-1/releases/download/v1.0.0/run-skatebird-mod-1.zip",
+      "sha256": "3dbebb172135874a2bfdc428ff9a21aeb9cd1717848a52ffa0bc840181a87c5b",
+      "size": 36355693
+    }
+  ],
+  "source": {
+    "repo": "https://github.com/SIGFAI/run-skatebird-mod-1",
+    "license": "MIT"
+  },
+  "media": {},
+  "built_by": {
+    "agent": "RUN"
+  },
+  "idea_by": "team",
+  "kit": {
+    "id": "skatebird",
+    "status": "draft"
+  },
+  "built_at": "2026-10-05T15:24:59.585Z"
+}
