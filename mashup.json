@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "name": "RUN, mod 1: SkateBIRD",
   "tagline": "Make a Run and Catch game from current game with levels, enemy types, all chasing you. Abilities for player and for enemy types. Several Voice lines player and enemy depending on situation/distance, including humour/memes.",
+  "how_to_play": [
+    "Skate the playground, grab the bread and don't get caught by the animals chasing you.",
+    "Clear 5 levels: Mittens the cat, Biscuit the dog, robot vacuums, Talon the eagle, then the Trash Panda boss.",
+    "Press Q or the SCREM button for a shockwave, and E to throw an egg; grab tricks throw free eggs.",
+    "Land on a chaser to bonk it, use flip tricks for a speed burst, and press C for the chase cam.",
+    "Press any key or button when the title card asks to start the run."
+  ],
   "kind": "mod",
   "games": [
     {
